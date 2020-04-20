@@ -71,9 +71,9 @@ def main():
 
     #print(result)
     final = np.sum(result, axis=0)
-    print("axis=0:",final)
+    #print("axis=0:",final)
     num_secs = final[0]*3600 + final[1]*60.0 + final[2]
-    print(int(num_secs/3600),"hh",int((num_secs%3600)/60),"mm",(num_secs%60),"ss")
+    print("%d hh %d mm %0.2f ss"%(int(num_secs/3600),int((num_secs%3600)/60),num_secs%60.0))
     #print("axis=1:",np.sum(result, axis=1))
     if args.output:
       with codecs.open(args.output, "wb", encoding="utf-8") as fw:
